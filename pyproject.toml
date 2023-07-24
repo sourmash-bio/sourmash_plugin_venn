@@ -1,21 +1,14 @@
-# CTB: search for XYZ and replace with plugin-specific information!
-
 [project]
-name = "sourmash_plugin_XYZ"
-description = "sourmash plugin to do XYZ."
+name = "sourmash_plugin_venn"
+description = "sourmash plugin to build venn diagrams."
 readme = "README.md"
 requires-python = ">=3.8"
 version = "0.1"
 
-dependencies = ["sourmash>=4.8.0,<5"]
+dependencies = ["sourmash>=4.8.0,<5", "matplotlib", "matplotlib_venn"]
 
 [metadata]
 license = { text = "BSD 3-Clause License" }
 
-# CTB note: do not need both reader and writer.
-
-[project.entry-points."sourmash.load_from"]
-xyz_reader = "sourmash_plugin_xyz:load_sketches"
-
-[project.entry-points."sourmash.save_to"]
-xyz_writer = "sourmash_plugin_xyz:SaveSignatures_XYZ"
+[project.entry-points."sourmash.cli_script"]
+sketchall = "sourmash_plugin_venn:Command_Venn"
