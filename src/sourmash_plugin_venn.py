@@ -5,9 +5,10 @@ import pylab
 from matplotlib_venn import venn2
 
 import sourmash
+from sourmash import sourmash_args
 from sourmash.logging import debug_literal, error, notify
 from sourmash.plugins import CommandLinePlugin
-
+from sourmash.cli.utils import (add_ksize_arg, add_moltype_args)
 
 ###
 
@@ -32,10 +33,14 @@ class Command_Venn(CommandLinePlugin):
                                help="override name for first sketch")
         subparser.add_argument('--name2', default=None,
                                help="override name for second sketch")
+        add_ksize_arg(subparser)
+        add_moltype_args(subparser)
 
     def main(self, args):
         # code that we actually run.
         super().main(args)
+        moltype = sourmash_args.calculate_moltype(args)
+
         debug_literal(f'RUNNING cmd {self} {args}')
 
         sketch_files = list(args.sketches)
@@ -43,11 +48,16 @@ class Command_Venn(CommandLinePlugin):
         sketches = []
         for filename in sketch_files:
             notify(f"Loading sketches from {filename}")
-            x = list(sourmash.load_file_as_signatures(filename))
+            x = list(sourmash.load_file_as_signatures(filename,
+                                                      ksize=args.ksize,
+                                                      select_moltype=moltype))
             notify(f"...loaded {len(x)} sketches from {filename}.")
             sketches.extend(x)
 
-        if len(sketches) < 2:
+        if not len(sketches):
+            error("ERROR: no sketches found. Must supply exactly 2.")
+            sys.exit(-1)
+        elif len(sketches) == 1:
             error("ERROR: only found one sketch. Must supply exactly 2.")
             sys.exit(-1)
         elif len(sketches) > 2:
