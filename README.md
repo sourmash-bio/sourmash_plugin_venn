@@ -9,7 +9,7 @@ protein sequences:
 ## Execution
 
 ```
-sourmash scripts venn a.sig b.sig
+sourmash scripts venn a.sig b.sig -o a-v-b.png
 ```
 
 ## Installation
