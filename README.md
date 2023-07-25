@@ -17,3 +17,11 @@ sourmash scripts venn a.sig b.sig -o a-v-b.png
 ```
 pip install sourmash_plugin_venn
 ```
+
+## Generating a release
+
+```
+python -m build
+```
+then `twine upload dist/...`.
+
