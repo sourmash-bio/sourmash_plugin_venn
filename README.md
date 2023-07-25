@@ -4,7 +4,7 @@ Generate Venn diagrams showing overlaps between two
 [sourmash sketches](https://sourmash.readthedocs.io/) of DNA or
 protein sequences:
 
-![simple Venn diagram](doc/venn.png)
+![simple Venn diagram](doc/simple.png)
 
 ## Execution
 
