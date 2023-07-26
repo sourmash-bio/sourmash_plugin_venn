@@ -2,7 +2,7 @@
 import sys
 
 import pylab
-from matplotlib_venn import venn2
+from matplotlib_venn import venn2, venn3
 
 import sourmash
 from sourmash import sourmash_args
