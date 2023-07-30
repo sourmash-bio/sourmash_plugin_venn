@@ -26,8 +26,14 @@ pip install sourmash_plugin_venn
 
 ## Generating a release
 
+Bump version number in `pyproject.toml` and push.
+
+Make a new release on github.
+
+Then pull, and:
+
 ```
 python -m build
 ```
-then `twine upload dist/...`.
 
+followed by `twine upload dist/...`.
