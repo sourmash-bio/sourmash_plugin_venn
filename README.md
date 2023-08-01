@@ -6,7 +6,7 @@ protein sequences:
 
 ![simple Venn diagram](doc/simple.png)
 
-## Execution
+## Examples
 
 ```
 sourmash scripts venn examples/a.sig.gz examples/b.sig.gz -o a-b.png
