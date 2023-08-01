@@ -1,5 +1,23 @@
-"Create and write out a pairwise Venn diagram."
+"""\
+create and write out a pairwise or three-way Venn set overlap diagram.
+
+Calculate and display overlaps between two or three sourmash sketches.
+
+'venn' provides figure output.
+"""
+
+usage="""
+   sourmash scripts venn -k 31 <sketches>
+"""
+
+epilog="""
+See https://github.com/ctb/sourmash_plugin_venn for more examples.
+
+Need help? Have questions? Ask at http://github.com/sourmash/issues!
+"""
+
 import sys
+import argparse
 
 import pylab
 from matplotlib_venn import venn2, venn3
@@ -18,7 +36,10 @@ from sourmash.cli.utils import (add_ksize_arg, add_moltype_args)
 
 class Command_Venn(CommandLinePlugin):
     command = 'venn'
-    description = "makes a venn diagram of the overlap between two or three sketches"
+    description = __doc__
+    usage = usage
+    epilog = epilog
+    formatter_class = argparse.RawTextHelpFormatter
 
     def __init__(self, subparser):
         super().__init__(subparser)
