@@ -11,7 +11,7 @@ usage="""
 """
 
 epilog="""
-See https://github.com/ctb/sourmash_plugin_venn for more examples.
+See https://github.com/sourmash-bio/sourmash_plugin_venn for more examples.
 
 Need help? Have questions? Ask at http://github.com/sourmash/issues!
 """
