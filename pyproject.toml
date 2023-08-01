@@ -11,4 +11,4 @@ dependencies = ["sourmash>=4.8.0,<5", "matplotlib", "matplotlib_venn"]
 license = { text = "BSD 3-Clause License" }
 
 [project.entry-points."sourmash.cli_script"]
-sketchall = "sourmash_plugin_venn:Command_Venn"
+venn = "sourmash_plugin_venn:Command_Venn"
