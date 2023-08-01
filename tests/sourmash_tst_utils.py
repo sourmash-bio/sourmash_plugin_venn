@@ -132,7 +132,7 @@ def get_test_data(filename):
     filepath = None
     try:
         filepath = resource_filename(
-            Requirement.parse("sourmash"), "sourmash/sourmash/test-data/"\
+            Requirement.parse("sourmash_plugin_venn"), "tests/test-data/"\
                 + filename)
     except ResolutionError:
         pass

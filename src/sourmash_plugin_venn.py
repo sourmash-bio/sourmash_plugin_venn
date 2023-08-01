@@ -73,13 +73,15 @@ class Command_Venn(CommandLinePlugin):
         label2 = args.name2 or sketches[1].name
 
         if len(sketches) == 2:
+            notify("found two sketches - outputting a 2-part Venn diagram.")
             venn2([hashes1, hashes2], set_labels=(label1, label2))
 
         elif len(sketches) == 3:
+            notify("found three sketches - outputting a 3-part Venn diagram.")
             hashes3 = set(sketches[2].minhash.hashes)
             label3 = args.name3 or sketches[2].name
             venn3([hashes1, hashes2,hashes3], set_labels=(label1, label2, label3))
 
         if args.output:
-            print(f"saving to '{args.output}'")
+            notify(f"saving to '{args.output}'")
             pylab.savefig(args.output)
