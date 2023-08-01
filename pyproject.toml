@@ -3,7 +3,7 @@ name = "sourmash_plugin_venn"
 description = "sourmash plugin to build venn diagrams."
 readme = "README.md"
 requires-python = ">=3.8"
-version = "0.3"
+version = "0.4"
 
 dependencies = ["sourmash>=4.8.0,<5", "matplotlib", "matplotlib_venn"]
 
