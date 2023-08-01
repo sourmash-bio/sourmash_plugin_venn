@@ -6,7 +6,7 @@ protein sequences:
 
 ![simple Venn diagram](doc/simple.png)
 
-## Execution
+## Examples
 
 ```
 sourmash scripts venn examples/a.sig.gz examples/b.sig.gz -o a-b.png
@@ -24,7 +24,18 @@ sourmash scripts venn examples/a.sig.gz examples/b.sig.gz examples/c.sig.gz -o a
 pip install sourmash_plugin_venn
 ```
 
-## Generating a release
+## Dev docs
+
+`venn` is developed at https://github.com/sourmash-bio/sourmash_plugin_venn.
+
+### Testing
+
+Run:
+```
+pytest tests
+```
+
+### Generating a release
 
 Bump version number in `pyproject.toml` and push.
 
