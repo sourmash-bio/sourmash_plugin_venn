@@ -1,6 +1,6 @@
 # sourmash_plugin_venn: generate a simple Venn diagram for two sourmash sketches
 
-## <span style="color:red">This plugin is deprecated.</span>
+<b><span style="color:red">This plugin is deprecated.</span></b>
 
 Please use the `venn` command in
 [the `betterplot` plugin](https://github.com/sourmash-bio/sourmash_plugin_betterplot/)
