@@ -1,5 +1,13 @@
 # sourmash_plugin_venn: generate a simple Venn diagram for two sourmash sketches
 
+## <span style="color:red">This plugin is deprecated.</span>
+
+Please use the `venn` command in
+[the `betterplot` plugin](https://github.com/sourmash-bio/sourmash_plugin_betterplot/)
+instead, as that plugin is maintained and supported as of August 2024.
+
+## Legacy documentation
+
 Generate Venn diagrams showing overlaps between two
 [sourmash sketches](https://sourmash.readthedocs.io/) of DNA or
 protein sequences:
